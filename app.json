@@ -1,0 +1,33 @@
+{
+  "pages": [
+    "pages/todo/todo",
+    "pages/welcome/welcome",
+    "pages/honor/honor"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": " OKR",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar":{
+    "color":"#ababab",
+    "selectedColor":"#fff",
+    "backgroundColor":"#555",
+    "list":[
+      {
+        "pagePath":"pages/todo/todo",
+        "text":"Todo",
+        "iconPath":"image/todo.png",
+        "selectedIconPath":"image/todos.png"
+      },
+      {
+        "pagePath":"pages/honor/honor",
+        "text":"Honor",
+        "iconPath":"image/honor.png",
+        "selectedIconPath":"image/honors.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

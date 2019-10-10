@@ -1,0 +1,12 @@
+<view class="container">
+  <view class="todo-title">从工作到娱乐，To Do 都是日常完成任务的方式。</view>
+  <input class="todo-input" auto-focus placeholder="输入你想进行的事件" />
+  <view class="todo-item">
+    <view class="todo-item-title">阿西吧西巴西巴</view>
+    <view class="todo-item-date">- 创建时间：2019/2/2 12:00:00</view>
+  </view>
+  <view class="todo-item">
+    <view class="todo-item-title">阿西吧西巴西巴</view>
+    <view class="todo-item-date">- 创建时间：2019/2/2 12:00:00</view>
+  </view>
+</view>
