@@ -1,0 +1,21 @@
+<view class="container">
+  <view class="title">请选择关键成果 KR (keyresult) 进行关联</view>
+  <block wx:if="{{!dataNull}}">
+    <view class="OKR-item">
+      <view class="objective">目标：完成OKR项目</view>
+      <view class="keyresult {{complete ? 'active' : 'none'}}">数据库配置</view>
+      <view class="keyresult">页面模板</view>
+      <view class="keyresult">页面模板</view>
+      <view class="keyresult {{complete ? 'active' : 'none'}}">数据库配置</view>
+      <view class="keyresult {{complete ? 'active' : 'none'}}">数据库配置</view>
+    </view>
+    <view class="OKR-item">
+      <view class="objective">目标：完成OKR项目</view>
+      <view class="keyresult {{complete ? 'active' : 'none'}}">数据库配置</view>
+      <view class="keyresult">页面模板</view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="tips">没有未完成的OKR，快去添加吧~</view>
+  </block>
+</view>

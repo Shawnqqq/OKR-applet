@@ -1,0 +1,46 @@
+.container{
+  padding: 30rpx;
+}
+.title{
+  font-size: 26rpx;
+  color:#777;
+}
+.honor-item{
+  margin: 25rpx 0;
+  height: 120rpx;
+  background: linear-gradient(to bottom right,rgb(87, 211, 211),rgb(212, 247, 247));
+  padding: 15rpx;
+  border-radius: 8rpx;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+.honor-text{
+  font-size: 26rpx;
+  color:#333;
+}
+.honor-time{
+  font-size: 18rpx;
+  color: #555;
+  text-indent: 20rpx;
+}
+.icon{
+  position: absolute;
+  top: -25rpx;
+  right: -15rpx;
+  width: 130rpx;
+  height: 130rpx;
+  font-size: 36rpx;
+  color: #999;
+  text-align: center;
+  line-height: 130rpx;
+  border-radius: 50%;
+  border: 5rpx solid #999;
+  transform: rotate(-45deg)
+}
+.tips{
+  font-size: 30rpx;
+  color: #777;
+  text-align: center;
+  margin-top: 400rpx;
+}

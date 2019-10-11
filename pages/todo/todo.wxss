@@ -19,7 +19,7 @@
   height: 100rpx;
   margin: 20rpx auto;
   padding: 20rpx 0 0 20rpx;
-  background-color: rgba(153, 153, 153, 0.2);
+  background: linear-gradient(to bottom right,rgb(87, 211, 211),rgb(212, 247, 247));
   border-radius: 8rpx;
 }
 .todo-item .todo-item-title{
@@ -29,6 +29,6 @@
 }
 .todo-item .todo-item-date{
   font-size: 22rpx;
-  color: #555;
+  color: #333333;
   text-indent: 10rpx;
 }

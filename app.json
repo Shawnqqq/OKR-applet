@@ -1,8 +1,10 @@
 {
   "pages": [
+    "pages/okr/okr",
+    "pages/honor/honor",
+    "pages/todo_keyresult/todo_keyresult",
     "pages/todo/todo",
-    "pages/welcome/welcome",
-    "pages/honor/honor"
+    "pages/welcome/welcome"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -26,6 +28,12 @@
         "text":"Honor",
         "iconPath":"image/honor.png",
         "selectedIconPath":"image/honors.png"
+      },
+      {
+        "pagePath":"pages/okr/okr",
+        "text":"OKR",
+        "iconPath":"image/KR.png",
+        "selectedIconPath":"image/KRs.png"
       }
     ]
   },

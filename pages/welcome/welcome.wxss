@@ -1,24 +1,62 @@
+.container{
+  position: relative;
+}
 .welcome-title{
-  height: 700rpx;
-  background-color: #9999993b;
-  padding: 200rpx 0 0 170rpx;
+  height: 500rpx;
+  background-color: rgb(231, 229, 229);
   display: flex;
   flex-direction: column;
+  z-index: 1;
 }
 .welcome-title .title-cn{
+  margin: 200rpx 0 0 170rpx;
   font-size: 52rpx;
   line-height: 2;
 }
 .welcome-title .title-en{
+  margin-left:170rpx;
   font-size: 28rpx;
   line-height: 2;
 }
+.round{
+  position: absolute;
+  top: -1200rpx;
+  left: -600rpx;
+  height: 1800rpx;
+  width: 2000rpx;
+  border-radius: 50%/50%;
+  transform-origin:50% 50%;
+  animation: rotate 4s linear 1s infinite;
+}
+@keyframes rotate{
+  0%{
+    transform: rotate(0)
+  }
+  100%{
+    transform: rotate(360deg)
+  }
+}
+.round-1{
+  animation-delay:3s;
+  z-index: -1;
+  background-color: rgba(231, 229, 229, 0.3);
+}
+.round-2{
+  animation-delay:2s;
+  z-index: -2;
+  background-color: rgba(231, 229, 229, 0.5);
+}
+.round-3{
+  animation-delay:1s;
+  z-index: -3;
+  background-color: rgb(231, 229, 229);
+}
 .welcome-login{
-  margin-top: 100rpx;
+  margin-top: 400rpx;
   width: 400rpx;
   height: 100rpx;
   font-size: 38rpx;
   color: #fff;
   line-height: 100rpx;
-  background-color: #555;
+  background-color: #777;
 }

@@ -3,5 +3,8 @@
     <text class="title-cn">目标与关键成果法</text>
     <text class="title-en">Objectives and Key Results</text>
   </view>
+  <view class="round round-1"></view>
+  <view class="round round-2"></view>
+  <view class="round round-3"></view>
   <button class="welcome-login">立即开始</button>
 </view>

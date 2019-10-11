@@ -1,1 +1,20 @@
-<view >honor</view>
+<view class="container">
+  <view class="title">已完成的 Todo,真棒 ~</view>
+  <block wx:if="{{!dataNull}}">
+    <view class="honor-item">
+      <view class="honor-text">搭建环境</view>
+      <view class="honor-time">- 创建时间 2019/10/8 20：20：20</view>
+      <view class="honor-time">- 完成时间 2018/10/11 10：18：59</view>
+      <view class="icon">Honor</view>
+    </view>
+    <view class="honor-item">
+      <view class="honor-text">数据库配置</view>
+      <view class="honor-time">- 创建时间 2019/10/8 20：20：20</view>
+      <view class="honor-time">- 完成时间 2018/10/11 10：18：59</view>
+      <view class="icon">Honor</view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="tips">还没有完成的Todo喔，快去完成吧！</view>
+  </block>
+</view>

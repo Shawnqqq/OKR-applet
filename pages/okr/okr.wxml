@@ -1,0 +1,18 @@
+<view class="container">
+  <view class="add" bindtap="handleInsert">添加 OKR</view>
+  <block wx:if="{{!dataNull}}">
+    <view class="kr-item" bindtap="handlesheet">
+      <view class="kr-title">完成OKR项目</view>
+      <view class="kr-time">- 创建时间 2019/10/08 12:00:00</view>
+      <view class="icon">完成</view>
+    </view>
+    <view class="kr-item">
+      <view class="kr-title">完成OKR项目</view>
+      <view class="kr-time">- 创建时间 2019/10/08 12:00:00</view>
+      <view class="icon">完成</view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="tips">还没有添加任何OKR喔，快去添加吧！</view>
+  </block>
+</view>
