@@ -1,5 +1,5 @@
 <view class="container">
-  <view class="add" bindtap="handleInsert">添加 OKR</view>
+  <navigator class="add" url="/pages/okr_insert/okr_insert" >添加 OKR</navigator>
   <block wx:if="{{!dataNull}}">
     <view class="kr-item" bindtap="handlesheet">
       <view class="kr-title">完成OKR项目</view>

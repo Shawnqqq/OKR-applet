@@ -1,0 +1,19 @@
+<view class="container">
+    <view class="objective-item">
+      <view class="objective-title">完成OKR项目</view>
+      <view class="objective-time">- 创建时间 2019/10/08 12:00:00</view>
+      <view class="objective-time">- 完成时间 2019/10/10 12:00:00</view>
+      <view class="icon" wx:if="{{objective_complete}}">完成</view>
+    </view>
+    <view class="keyresult-item" wx:for="{{krList}}" bindtap="{{item.complete ? none : 'handleSheet'}}">
+      <view class="keyresult-content">
+        <view class="kr-dot {{item.complete ? 'active' : none}}"></view>
+        <view class="kr-title">{{item.title}}</view>
+        <view class="kr-complete" wx:if="{{item.complete}}">已完成</view>
+        <view class="kr-complete" wx:else>点击标记</view>
+      </view>
+      <view class="todo-list" wx:for="{{item.todolist}}" wx:for-item="todo">
+        <view class="todo-item {{todo.complete ? 'active' : none}}">- {{todo.title}}</view>
+      </view>
+    </view>
+</view>

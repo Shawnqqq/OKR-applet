@@ -19,5 +19,5 @@
       </view>
     </view>
   </view>
-  <view class="insert-btn">确认添加</view>
+  <view class="insert-btn">确认修改</view>
 </view>

@@ -13,6 +13,7 @@
   height: 80rpx;
   line-height: 80rpx;
   padding-left: 20rpx;
+  box-shadow: 1rpx 1rpx 4rpx rgba(0, 0, 0, 0.5);
 }
 .todo-item{
   width: 95%;

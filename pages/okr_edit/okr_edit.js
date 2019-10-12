@@ -5,7 +5,7 @@ Page({
   },
   onLoad: function (options) {
     wx.setNavigationBarTitle({
-      title:"OKR 添加"
+      title:"OKR 修改"
     })
   },
   handleAdd(){
