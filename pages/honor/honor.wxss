@@ -7,7 +7,7 @@
 }
 .honor-item{
   margin: 25rpx 0;
-  height: 120rpx;
+  height: 130rpx;
   background: linear-gradient(to bottom right,rgb(87, 211, 211),rgb(212, 247, 247));
   padding: 15rpx;
   border-radius: 8rpx;
@@ -17,10 +17,10 @@
 }
 .honor-text{
   font-size: 26rpx;
-  color:#333;
+  color:#000;
 }
 .honor-time{
-  font-size: 18rpx;
+  font-size: 20rpx;
   color: #555;
   text-indent: 20rpx;
 }

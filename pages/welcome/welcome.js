@@ -1,66 +1,51 @@
-// pages/welcome/welcome.js
-Page({
+import API from '../../global/request/api.js';
 
-  /**
-   * 页面的初始数据
-   */
+Page({
   data: {
 
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-
+    
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  handleLogin(){
+    const app = getApp()
+    //查看缓存
+    let storageUserInfo = wx.getStorageSync('userInfo');
+    if (storageUserInfo){
+      app.globalData.userInfo = storageUserInfo;
+      wx.switchTab({ url: '/pages/todo/todo' })
+      return
+    }
+    wx.getUserInfo({
+      success: function (res) {
+        let userInfo = res.userInfo
+        let nickName = userInfo.nickName
+        let avatarUrl = userInfo.avatarUrl
+        console.log(avatarUrl)
+        wx.login({
+          success(res){
+            if(res.code){
+              wx.request({
+                url: API.login,
+                data:{
+                  code:res.code,
+                  name:nickName
+                },
+                success:(res) =>{
+                  if(res.data.message==="登录成功"){
+                    let info = res.data.userInfo;
+                    wx.setStorageSync('userInfo', info);
+                    app.globalData.userInfo = info;
+                    wx.switchTab({url:'/pages/todo/todo'})
+                  }
+                }
+              })
+            }else{
+              console.log('登录失败！' + res.errMsg)
+            }
+          }
+        })
+      }
+    })
   }
 })

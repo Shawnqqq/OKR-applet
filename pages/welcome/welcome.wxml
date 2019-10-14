@@ -6,5 +6,5 @@
   <view class="round round-1"></view>
   <view class="round round-2"></view>
   <view class="round round-3"></view>
-  <button class="welcome-login">立即开始</button>
+  <button class="welcome-login" bindtap="handleLogin">立即开始</button>
 </view>

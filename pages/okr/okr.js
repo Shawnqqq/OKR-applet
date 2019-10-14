@@ -1,6 +1,10 @@
+import API from '../../global/request/api.js';
+const app = getApp()
+
 Page({
   data:{
-    dataNull:false
+    dataNull:false,
+    user_id: app.globalData.userInfo
   },
   handlesheet(){
     wx.showActionSheet({
@@ -9,5 +13,6 @@ Page({
         console.log(res.tapIndex)
       }
     })
-  }
+  },
+
 })

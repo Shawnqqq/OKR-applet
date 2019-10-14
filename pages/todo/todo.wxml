@@ -1,12 +1,21 @@
 <view class="container">
   <view class="todo-title">从工作到娱乐，To Do 都是日常完成任务的方式。</view>
-  <input class="todo-input" auto-focus placeholder="输入你想进行的事件" />
-  <view class="todo-item" bindtap="handleSheet">
-    <view class="todo-item-title">阿西吧西巴西巴</view>
-    <view class="todo-item-date">- 创建时间：2019/2/2 12:00:00</view>
-  </view>
-  <view class="todo-item">
-    <view class="todo-item-title">阿西吧西巴西巴</view>
-    <view class="todo-item-date">- 创建时间：2019/2/2 12:00:00</view>
-  </view>
+  <input class="todo-input" 
+    auto-focus 
+    placeholder="输入你想进行的事件" 
+    bindconfirm="handleInsert"
+    value="{{todoValue}}" />
+  <block wx:if="{{todoData.length>0 ? true : false}}">
+    <view class="todo-item" 
+      bindtap="handleSheet"
+      wx:for="{{todoData}}"
+      wx:key="{{item.id}}"
+      data-id="{{item.id}}">
+      <view class="todo-item-title">{{item.text}}</view>
+      <view class="todo-item-date">- 创建时间：{{item.created_time}}</view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="tips">还没有未完成的Todo喔，快去添加吧！</view>
+  </block>
 </view>

@@ -33,3 +33,9 @@
   color: #333333;
   text-indent: 10rpx;
 }
+.tips{
+  font-size: 30rpx;
+  color: #777;
+  text-align: center;
+  margin-top: 400rpx;
+}

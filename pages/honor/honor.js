@@ -1,11 +1,28 @@
-// pages/todo/todo.js
+import API from '../../global/request/api.js';
+const app = getApp()
+
 Page({
   data: {
-    dataNull:false
+    honorData:[]
   },
-  onLoad: function (options) {
+  onLoad: function (options){
     wx.setNavigationBarTitle({
       title:"Honor"
+    })
+  },
+  onShow:function(){
+    let id = app.globalData.userInfo.id;
+    let that = this
+    wx.request({
+      url: API.honor,
+      data: {
+        user_id: id
+      },
+      success(res) {
+        that.setData({
+          honorData: res.data.data
+        })
+      }
     })
   },
   handleSheet(){
