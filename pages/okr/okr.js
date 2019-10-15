@@ -12,7 +12,9 @@ Page({
       success(res) {
         switch (res.tapIndex) {
           case 0:
-            console.log('查看')
+            wx.navigateTo({
+              url: `../okr_detail/okr_detail?id=${e.currentTarget.dataset.id}`
+            })
             break;
           case 1:
             wx.navigateTo({

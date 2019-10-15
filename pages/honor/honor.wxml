@@ -1,6 +1,6 @@
 <view class="container">
   <view class="title">已完成的 Todo,真棒 ~</view>
-  <block wx:if="{{!dataNull}}">
+  <block wx:if="{{honorData.length>0 ? true : false}}">
     <view class="honor-item" 
       bindtap="handleSheet"
       wx:for="{{honorData}}"

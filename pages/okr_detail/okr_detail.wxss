@@ -6,7 +6,7 @@
   height: 150rpx;
   margin: 10rpx auto;
   border-radius: 8rpx;
-  background: linear-gradient(to bottom right,rgb(76, 161, 247),rgb(208, 230, 252));
+  background: linear-gradient(to bottom right,rgb(40, 144, 248),rgb(208, 230, 252));
   padding: 20rpx;
   box-sizing: border-box;
   position: relative;

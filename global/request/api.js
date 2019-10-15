@@ -15,4 +15,7 @@ export default{
   honor: `${PREFIX}/honor`,
   okr: `${PREFIX}/okr`,
   okrSingle: `${PREFIX}/okrSingle`,
+  todoKeyresult: `${PREFIX}/todoKeyresult`,
+  okrTodo: `${PREFIX}/okrTodo`,
+  kr: `${PREFIX}/kr`
 }

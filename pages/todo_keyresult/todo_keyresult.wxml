@@ -1,18 +1,18 @@
 <view class="container">
   <view class="title">请选择关键成果 KR (keyresult) 进行关联</view>
-  <block wx:if="{{!dataNull}}">
-    <view class="OKR-item">
-      <view class="objective">目标：完成OKR项目</view>
-      <view class="keyresult {{complete ? 'active' : 'none'}}">数据库配置</view>
-      <view class="keyresult">页面模板</view>
-      <view class="keyresult">页面模板</view>
-      <view class="keyresult {{complete ? 'active' : 'none'}}">数据库配置</view>
-      <view class="keyresult {{complete ? 'active' : 'none'}}">数据库配置</view>
-    </view>
-    <view class="OKR-item">
-      <view class="objective">目标：完成OKR项目</view>
-      <view class="keyresult {{complete ? 'active' : 'none'}}">数据库配置</view>
-      <view class="keyresult">页面模板</view>
+  <block wx:if="{{okrData.length>0 ? true : false}}">
+    <view class="OKR-item"
+      wx:for="{{okrData}}"
+      wx:key="{{index}}">
+      <view class="objective">目标：{{item.obText}}</view>
+      <view 
+        wx:for="{{item.krData}}"
+        wx:for-item="kr"
+        wx:key="{{kr.id}}"
+        class="keyresult {{kr.bind ? 'active' : 'none'}}"
+        data-id="{{kr.id}}"
+        bindtap="{{kr.bind ? 'handleOff' : 'handleBind'}}"
+        >{{kr.text}}</view>
     </view>
   </block>
   <block wx:else>

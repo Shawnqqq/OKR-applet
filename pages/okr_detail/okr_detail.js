@@ -1,33 +1,87 @@
+import API from '../../global/request/api.js';
+const app = getApp()
+
 Page({
   data:{
-    objective_complete:true,
-    krList:[{
-      title:'搭建数据库',
-      complete:true,
-      todolist:[
-        { title:'创建用户表', complete:true},
-        { title:'创建todo表', complete:false}
-      ]
-    },{
-      title: '构造业务逻辑',
-      complete: false,
-      todolist: [
-        { title: '连接keyresult', complete: true },
-        { title: '连接keyresult2222', complete: false },
-        { title: '连接keyresult3333', complete: false }
-      ]
-    }]
+    obId:'',
+    obData:'',
+    krData:[]
   },
   onLoad: function (options) {
     wx.setNavigationBarTitle({
       title:"OKR 查看"
     })
+    this.setData({
+      obId: options.id
+    })
   },
-  handleSheet(){
+  onShow(){
+    let id = this.data.obId;
+    let that = this;
+    wx.request({
+      url: API.okrTodo,
+      data: {
+        id: id
+      },
+      success(res) {
+        that.setData({
+          obData: res.data.obData,
+          krData: res.data.krData
+        })
+      }
+    })
+  },
+  handleSheet(e){
+    let that = this
     wx.showActionSheet({
       itemList: ['标记成已完成', '删除'],
       success(res){
-        console.log(res.tapIndex)
+        switch (res.tapIndex){
+          case 0:
+          that.handleComplete(e.currentTarget.dataset.id)
+            break;
+          case 1:
+            that.handleDeleted(e.currentTarget.dataset.id)
+            break;
+        }
+      }
+    })
+  },
+  handleSheets(e){
+    let that = this
+    wx.showActionSheet({
+      itemList: ['删除'],
+      success(res) {
+        switch (res.tapIndex) {
+          case 0:
+            that.handleDeleted(e.currentTarget.dataset.id)
+            break;
+        }
+      }
+    })
+  },
+  handleComplete(id){
+    let that = this
+    wx.request({
+      url: API.kr + '/' + id,
+      method: 'PUT',
+      success(res) {
+        console.log(res)
+        if (res.data.message = "修改成功") {
+          that.onShow();
+        }
+      }
+    })
+  },
+  handleDeleted(id){
+    let that = this
+    wx.request({
+      url: API.kr + '/' + id,
+      method: 'DELETE',
+      success(res) {
+        if (res.data.message = "删除成功") {
+          that.onShow();
+        }
       }
     })
   }
