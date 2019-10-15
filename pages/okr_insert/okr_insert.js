@@ -1,3 +1,6 @@
+const app = getApp()
+import API from '../../global/request/api.js';
+
 Page({
   data:{
     objValue:'',
@@ -30,6 +33,36 @@ Page({
     value[index]=e.detail.value
     this.setData({
       krValue:value
+    })
+  },
+  // 失焦 更新objective Value
+  handleblur(e){
+    let value = this.data.objValue;
+    value = e.detail.value
+    this.setData({
+      objValue:value
+    })
+  },
+  handleinsert(){
+    let objective = this.data.objValue;
+    let keyresult = this.data.krValue;
+    let user_id = app.globalData.userInfo.id;
+    let that = this;
+    wx.request({
+      url: API.okr,
+      method: 'POST',
+      data: {
+        user_id: user_id,
+        objective: objective,
+        keyresult: keyresult
+      },
+      success(res) {
+        if (res.data.message = "增加成功") {
+          wx.navigateBack({
+            delta: 1
+          })
+        }
+      }
     })
   }
 })

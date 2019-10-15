@@ -25,11 +25,28 @@ Page({
       }
     })
   },
-  handleSheet(){
+  handleSheet(e){
+    let that = this
     wx.showActionSheet({
       itemList: ['删除'],
       success(res) {
-        console.log(res.tapIndex)
+        switch (res.tapIndex) {
+          case 0:
+            that.handleDeleted(e.currentTarget.dataset.id)
+            break;
+        }
+      }
+    })
+  },
+  handleDeleted(id){
+    let that = this
+    wx.request({
+      url: API.todo + '/' + id,
+      method: 'DELETE',
+      success(res) {
+        if (res.data.message = "删除成功") {
+          that.onShow();
+        }
       }
     })
   }

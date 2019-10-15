@@ -33,7 +33,9 @@ Page({
       success(res){
         switch (res.tapIndex){
           case 0:
-            console.log('关联')
+            wx.navigateTo({
+              url: `../todo_keyresult/todo_keyresult?id=${e.currentTarget.dataset.id}`
+            })
             break;
           case 1:
             that.handleComplete(e.currentTarget.dataset.id)

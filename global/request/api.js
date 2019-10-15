@@ -12,5 +12,7 @@ export default{
   version: VERSION,
   login: `${PREFIX}/login`,
   todo: `${PREFIX}/todo`,
-  honor: `${PREFIX}/honor`
+  honor: `${PREFIX}/honor`,
+  okr: `${PREFIX}/okr`,
+  okrSingle: `${PREFIX}/okrSingle`,
 }

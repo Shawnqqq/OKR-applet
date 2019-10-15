@@ -3,7 +3,9 @@
   <block wx:if="{{!dataNull}}">
     <view class="honor-item" 
       bindtap="handleSheet"
-      wx:for="{{honorData}}">
+      wx:for="{{honorData}}"
+      wx:key="{{item.id}}"
+      data-id="{{item.id}}">
       <view class="honor-text">{{item.text}}</view>
       <view class="honor-time">- 创建时间 {{item.created_time}}</view>
       <view class="honor-time">- 完成时间 {{item.end_time}}</view>

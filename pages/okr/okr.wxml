@@ -1,15 +1,15 @@
 <view class="container">
   <navigator class="add" url="/pages/okr_insert/okr_insert" >添加 OKR</navigator>
-  <block wx:if="{{!dataNull}}">
-    <view class="kr-item" bindtap="handlesheet">
-      <view class="kr-title">完成OKR项目</view>
-      <view class="kr-time">- 创建时间 2019/10/08 12:00:00</view>
-      <view class="icon">完成</view>
-    </view>
-    <view class="kr-item">
-      <view class="kr-title">完成OKR项目</view>
-      <view class="kr-time">- 创建时间 2019/10/08 12:00:00</view>
-      <view class="icon">完成</view>
+  <block wx:if="{{okrData.length>0 ? true : false}}">
+    <view class="kr-item" 
+      bindtap="handlesheet"
+      wx:for="{{okrData}}"
+      wx:key="{{item.id}}"
+      data-id="{{item.id}}">
+      <view class="kr-title">{{item.text}}</view>
+      <view class="kr-time">- 创建时间 {{item.created_time}}</view>
+      <view class="kr-time" wx:if="{{item.state == 2? true : false}}">- 完成时间 {{item.end_time}}</view>
+      <view class="icon" wx:if="{{item.state == 2? true : false}}">完成</view>
     </view>
   </block>
   <block wx:else>

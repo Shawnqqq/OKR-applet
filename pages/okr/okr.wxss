@@ -12,7 +12,6 @@
 }
 .kr-item{
   width: 97%;
-  height: 120rpx;
   margin: 20rpx auto;
   border-radius: 8rpx;
   background: linear-gradient(to bottom right,rgba(30, 143, 255),rgb(208, 230, 252));

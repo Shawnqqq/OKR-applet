@@ -1,23 +1,29 @@
 <view class="container">
   <view class="okr-container">
-    <view class="okr-item">
+    <view class="okr-item"> 
       <view class="okr-title">Objective 目标：</view>
-      <input class="okr-input" placeholder="请输入你的目标" value="{{objValue}}"/>
+      <input class="okr-input" 
+        placeholder="请输入你的目标" 
+        value="{{objValue}}"
+        bindblur="handleblur"/>
       <view class="okr-btn" bindtap="handleAdd">+</view>
     </view>
-    <view class="okr-item" wx:for="{{krValue}}">
+    <view class="okr-item" 
+      wx:for="{{krValue}}"
+      wx:key="{{item.id}}">
       <view class="okr-title">keyresult 关键计划 {{index+1}}：</view>
       <input class="okr-input" 
         placeholder="请输入你的计划"
         data-index="{{index}}"
-        value="{{item}}"
+        value="{{item.krText}}"
         bindblur="handleUpdate"/>
       <view class="okr-btn reduce" 
         data-index="{{index}}"
+        data-id="{{item.id}}"
         bindtap="handleReduce">
         -
       </view>
     </view>
   </view>
-  <view class="insert-btn">确认修改</view>
+  <view class="insert-btn" bindtap="handleEdit">确认修改</view>
 </view>
